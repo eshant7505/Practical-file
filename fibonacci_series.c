@@ -1,7 +1,6 @@
-//Fabonacci series
+//Fabonacci series usig recursion.
 #include <stdio.h>
 
-// Function to calculate Fibonacci series using recursion
 int fibonacci(int n) {
     if (n <= 1) {
         return n;
@@ -12,12 +11,9 @@ int fibonacci(int n) {
 
 int main() {
     int n;
-
-    // Input the number of terms
     printf("Enter the number of terms for Fibonacci series: ");
     scanf("%d", &n);
 
-    // Print Fibonacci series
     printf("Fibonacci series up to %d terms: ", n);
     for (int i = 0; i < n; i++) {
         printf("%d ", fibonacci(i));
