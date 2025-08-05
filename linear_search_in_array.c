@@ -4,10 +4,10 @@
 int linearSearch(int arr[], int n, int key) {
     for (int i = 0; i < n; i++) {
         if (arr[i] == key) {
-            return i; // Return the index if the element is found
+            return i; 
         }
     }
-    return -1; // Return -1 if the element is not found
+    return -1; 
 }
 
 int main() {
