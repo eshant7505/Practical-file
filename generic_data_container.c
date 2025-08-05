@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Enum to represent the data type
 typedef enum {
     INTEGER,
     FLOAT,
@@ -10,7 +9,7 @@ typedef enum {
     STRING
 } DataType;
 
-// Union to store different types of data
+
 typedef union {
     int intData;
     float floatData;
@@ -18,13 +17,12 @@ typedef union {
     char* strData;
 } DataValue;
 
-// Struct to represent the generic data container
+
 typedef struct {
     DataType type;
     DataValue value;
 } DataContainer;
 
-// Function to set data in the container
 void setData(DataContainer* container, DataType type, void* data) {
     container->type = type;
 
@@ -47,7 +45,6 @@ void setData(DataContainer* container, DataType type, void* data) {
     }
 }
 
-// Function to get data from the container
 void getData(DataContainer* container, void* output) {
     if (container->type == STRING) {
         // For string type, copy the string to the output
@@ -69,25 +66,20 @@ void freeStringData(DataContainer* container) {
 int main() {
     DataContainer container;
 
-    // Set integer data
     int intValue = 42;
     setData(&container, INTEGER, &intValue);
 
-    // Get and print integer data
     int retrievedIntValue;
     getData(&container, &retrievedIntValue);
     printf("Retrieved Integer: %d\n", retrievedIntValue);
 
-    // Set string data
     char stringValue[] = "Hello, World!";
     setData(&container, STRING, stringValue);
 
-    // Get and print string data
     char retrievedStringValue[50];
     getData(&container, retrievedStringValue);
     printf("Retrieved String: %s\n", retrievedStringValue);
 
-    // Free memory for string data
     freeStringData(&container);
 
     return 0;
