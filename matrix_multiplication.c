@@ -1,18 +1,15 @@
 //matrix multiplication
 #include <stdio.h>
 
-// Function to perform matrix multiplication
 void multiplyMatrices(int firstMatrix[10][10], int secondMatrix[10][10], int result[10][10], int rowFirst, int columnFirst, int rowSecond, int columnSecond) {
     int i, j, k;
 
-    // Initializing elements of result matrix to 0
     for (i = 0; i < rowFirst; ++i) {
         for (j = 0; j < columnSecond; ++j) {
             result[i][j] = 0;
         }
     }
 
-    // Multiplying firstMatrix and secondMatrix and storing in result
     for (i = 0; i < rowFirst; ++i) {
         for (j = 0; j < columnSecond; ++j) {
             for (k = 0; k < columnFirst; ++k) {
@@ -22,7 +19,6 @@ void multiplyMatrices(int firstMatrix[10][10], int secondMatrix[10][10], int res
     }
 }
 
-// Function to display a matrix
 void displayMatrix(int matrix[10][10], int row, int column) {
     int i, j;
     for (i = 0; i < row; ++i) {
@@ -43,7 +39,7 @@ int main() {
     printf("Enter rows and columns for second matrix: ");
     scanf("%d %d", &rowSecond, &columnSecond);
 
-    // Taking input until matrices are compatible for multiplication
+
     while (columnFirst != rowSecond) {
         printf("Error! column of first matrix not equal to row of second.\n");
 
@@ -54,7 +50,6 @@ int main() {
         scanf("%d %d", &rowSecond, &columnSecond);
     }
 
-    // Taking input for elements of the first matrix
     printf("\nEnter elements of matrix 1:\n");
     for (int i = 0; i < rowFirst; ++i) {
         for (int j = 0; j < columnFirst; ++j) {
@@ -63,7 +58,6 @@ int main() {
         }
     }
 
-    // Taking input for elements of the second matrix
     printf("\nEnter elements of matrix 2:\n");
     for (int i = 0; i < rowSecond; ++i) {
         for (int j = 0; j < columnSecond; ++j) {
@@ -74,7 +68,6 @@ int main() {
 
     multiplyMatrices(firstMatrix, secondMatrix, result, rowFirst, columnFirst, rowSecond, columnSecond);
 
-    // Displaying the multiplication result
     printf("\nProduct of matrices:\n");
     displayMatrix(result, rowFirst, columnSecond);
 
