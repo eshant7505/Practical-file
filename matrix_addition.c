@@ -4,7 +4,6 @@
 #define ROWS 3
 #define COLS 3
 
-// Function to add two matrices
 void addMatrices(int mat1[ROWS][COLS], int mat2[ROWS][COLS], int result[ROWS][COLS]) {
     for (int i = 0; i < ROWS; i++) {
         for (int j = 0; j < COLS; j++) {
@@ -13,7 +12,6 @@ void addMatrices(int mat1[ROWS][COLS], int mat2[ROWS][COLS], int result[ROWS][CO
     }
 }
 
-// Function to display a matrix
 void displayMatrix(int matrix[ROWS][COLS]) {
     for (int i = 0; i < ROWS; i++) {
         for (int j = 0; j < COLS; j++) {
@@ -34,10 +32,8 @@ int main() {
 
     int resultMatrix[ROWS][COLS];
 
-    // Adding matrices
     addMatrices(matrix1, matrix2, resultMatrix);
 
-    // Displaying matrices
     printf("Matrix 1:\n");
     displayMatrix(matrix1);
 
